@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Referrals - EARNERS</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.referral-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.referral-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #c5ff95;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.referral-item:hover {
+    transform: scale(1.03);
+}
+
+.rank {
+    font-size: 20px;
+    font-weight: 700;
+    color: #46b100;
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+.referral-details h3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+.referral-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+        max-width: 700px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .rank {
+        font-size: 22px;
+        width: 35px;
+    }
+
+    .referral-details h3 {
+        font-size: 20px;
+    }
+
+    .referral-details p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        width: 70%;
+        max-width: 800px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .referral-item {
+        padding: 15px 20px;
+    }
+
+    .rank {
+        font-size: 24px;
+        width: 40px;
+    }
+
+    .referral-details h3 {
+        font-size: 22px;
+    }
+
+    .referral-details p {
+        font-size: 18px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Top Referrals</h1>
+        <div class="referral-list">
+            <div class="referral-item">
+                <span class="rank">1</span>
+                <div class="referral-details">
+                    <h3>John Doe</h3>
+                    <p>Referrals: <span>3758</span></p>
+                </div>
+            </div>
+            <div class="referral-item">
+                <span class="rank">2</span>
+                <div class="referral-details">
+                    <h3>John Smith</h3>
+                    <p>Referrals: <span>3422</span></p>
+                </div>
+            </div>
+            <div class="referral-item">
+                <span class="rank">3</span>
+                <div class="referral-details">
+                    <h3>Mike Johnson</h3>
+                    <p>Referrals: <span>2872</span></p>
+                </div>
+            </div>
+            <div class="referral-item">
+                <span class="rank">4</span>
+                <div class="referral-details">
+                    <h3>Prosper Martins</h3>
+                    <p>Referrals: <span>2572</span></p>
+                </div>
+            </div>
+            <div class="referral-item">
+                <span class="rank">5</span>
+                <div class="referral-details">
+                    <h3>Mike Johnson</h3>
+                    <p>Referrals: <span>2872</span></p>
+                </div>
+            </div>
+            <div class="referral-item">
+                <span class="rank">6</span>
+                <div class="referral-details">
+                    <h3>Mike Johnson</h3>
+                    <p>Referrals: <span>2872</span></p>
+                </div>
+            </div>
+            <!-- Additional referral items can be added here -->
+        </div>
+    </div>
+</body>
+</html>

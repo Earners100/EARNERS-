@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post an Advert - EARNERS</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #154dff, #40a1ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    label {
+      font-weight: 600;
+      color: #555;
+      display: block;
+      margin-bottom: 6px;
+    }
+    input[type="text"], input[type="tel"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+      color: #333;
+    }
+    input[type="file"] {
+      display: none;
+    }
+    .upload-label {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #ff416c;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .image-preview {
+      display: none;
+      margin-top: 15px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff4b2b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 15px;
+    }
+    .submit-btn:hover {
+      background-color: #ff6b4d;
+    }
+    .payment-info {
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Post Your Advert</h2>
+  <form id="advertForm">
+
+    <!-- Advert Category -->
+    <div class="form-group">
+      <label for="category">Advert Category</label>
+      <select id="category" name="category" required>
+        <option value="">Select Category</option>
+        <option value="e-commerce">E-commerce</option>
+        <option value="digital_products">Digital Products</option>
+        <option value="services">Services</option>
+        <option value="events">Events</option>
+        <option value="others">Others</option>
+      </select>
+    </div>
+
+    <!-- Upload Advert Image -->
+    <div class="form-group">
+      <label>Upload Advert Image</label>
+      <label class="upload-label" for="advertImage">Choose Image</label>
+      <input type="file" id="advertImage" name="advertImage" accept="image/*" required>
+      <div class="image-preview" id="imagePreview">
+        <img id="previewImg" src="" alt="Advert Preview">
+      </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="form-group">
+      <label for="contactNumber">Contact Number (WhatsApp or Phone)</label>
+      <input type="tel" id="contactNumber" name="contactNumber" placeholder="Enter your phone number" required>
+    </div>
+
+    <!-- Advert Description -->
+    <div class="form-group">
+      <label for="description">Advert Description</label>
+      <textarea id="description" name="description" placeholder="Briefly describe your advert" required></textarea>
+    </div>
+
+    <!-- Payment Information -->
+    <div class="form-group payment-info">
+      <p>The cost to post an advert is 500 Naira per day.</p>
+    </div>
+
+    <!-- Payment Button Placeholder -->
+    <div class="form-group">
+      <!-- Flutterwave payment button can be integrated here -->
+      <button type="button" class="submit-btn">Proceed to Payment</button>
+    </div>
+    
+  </form>
+</div>
+
+<script>
+  // Preview uploaded image
+  document.getElementById('advertImage').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const preview = document.getElementById('imagePreview');
+    const previewImg = document.getElementById('previewImg');
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        previewImg.src = e.target.result;
+        preview.style.display = 'block';
+      }
+      reader.readAsDataURL(file);
+    } else {
+      preview.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

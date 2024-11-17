@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* Resetting default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background */
+        body {
+            background: linear-gradient(to right, #154dff, #40a1ff);
+            background-size: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        /* Login Container */
+        .login-container {
+            background-color: rgba(255, 215, 0, 0.1);
+            border-radius: 12px;
+            padding: 40px 30px;
+            width: 350px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Input Fields */
+        .login-container input[type="text"],.login-container input[type="email"],.login-container input[type="number"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .login-container input[type="text"]:focus,
+        .login-container input[type="number"]:focus,
+        .login-container input[type="email"]:focus,
+        .login-container input[type="password"]:focus {
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+
+        /* Submit Button */
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #ff4b2b;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-container button:hover {
+            background: #ff6b4b;
+        }
+
+        /* Additional Styling */
+        .login-container p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+
+        .login-container p a {
+            color: #ff4b2b;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .login-container p a:hover {
+            color: #ff6b4b;
+        }
+        label{
+            text-align: left; 
+            justify-content: left; 
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Create a new account </h2>
+        <form>
+            <label>|Full name| 
+                <input type="text" name="name" placeholder="input your name" required>
+            </label>
+            <label>|Email| 
+                <input type="email" name="email" placeholder="input your email" required>
+            </label>
+            <label>|Phone number| 
+                <input type="number" name="phone number" placeholder="input your number" required>
+            </label>
+            <label>|Age| 
+                <input type="number" name="age" placeholder="input your age" required>
+            </label>
+            <label>|Create a password|
+            <input type="password" name="create password" placeholder="create Password" required>
+            </label>
+            <label>|Confirm password|
+            <input type="password" confirm password placeholder="retype Password" required>
+            </label>
+            <button type="submit" name="sign up">sign up</button>
+            <p>already have an account? <a href="login.html">Click here</a></p>
+        </form>
+    </div>
+</body>
+</html>

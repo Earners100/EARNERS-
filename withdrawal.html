@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EARNERS Withdrawal Page</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #154dff, #40a1ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+    .note {
+      color: #888;
+      font-size: 0.9em;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    label {
+      font-weight: 600;
+      color: #555;
+      display: block;
+      margin-bottom: 6px;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 16px;
+      color: #333;
+    }
+    .account-info {
+      text-align: left;
+      background: #f9f9f9;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: red;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover {
+      background-color: #218838;
+    }
+    .min-withdrawal-info {
+      font-size: 0.85em;
+      color: #555;
+      margin-top: 15px;
+      text-align: left;
+    }
+    .change-account-link {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 0.9em;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .change-account-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Withdraw Your Earnings</h2>
+  <p class="note">Please review your account details below and complete the withdrawal form.</p>
+  
+  <!-- Display Account Information -->
+  <div class="account-info">
+    <strong>Bank Name:</strong> <span id="bankName">First Bank</span><br>
+    <strong>Account Number:</strong> <span id="accountNumber">1234567890</span><br>
+    <strong>Account Name:</strong> <span id="accountName">John Doe</span>
+    <a href="settings.html" class="change-account-link">Change Account Details</a>
+  </div>
+
+  <!-- Withdrawal Form -->
+  <form id="withdrawalForm">
+    <!-- Withdrawal Amount -->
+    <div class="form-group">
+      <label for="amount">Withdrawal Amount (Naira)</label>
+      <input type="number" id="amount" name="amount" placeholder="Enter amount to withdraw" min="4000" required>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">Request Withdrawal</button>
+  </form>
+
+  <!-- Minimum Withdrawal Info -->
+  <div class="min-withdrawal-info">
+    <p><strong>Note:</strong> The minimum withdrawal amount is 4,000 Naira. Payments will be processed within 10 minutes after placing a request.</p>
+  </div>
+</div>
+
+<script>
+  // Simulate fetching account details from a database or API
+  const accountDetails = {
+    bankName: "First Bank",
+    accountNumber: "1234567890",
+    accountName: "John Doe",
+  };
+
+  // Display fetched account details
+  document.getElementById('bankName').textContent = accountDetails.bankName;
+  document.getElementById('accountNumber').textContent = accountDetails.accountNumber;
+  document.getElementById('accountName').textContent = accountDetails.accountName;
+
+  // Placeholder function for integrating Flutterwave API
+  document.getElementById('withdrawalForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const amount = document.getElementById('amount').value;
+
+    // Verify minimum amount
+    if (amount < 4000) {
+      alert("Minimum withdrawal amount is 4,000 Naira.");
+      return;
+    }
+
+    // Integrate Flutterwave API for withdrawal processing
+    alert("Withdrawal request submitted successfully!");
+  });
+</script>
+
+</body>
+</html>

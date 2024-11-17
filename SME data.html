@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SME Data Sales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+      color: #555;
+    }
+    select, input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    .price-box {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+    button {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Buy SME Data</h2>
+    <form id="dataPurchaseForm">
+      <div class="form-group">
+        <label for="network">Select Network</label>
+        <select id="network">
+          <option value="">--Select Network--</option>
+          <option value="MTN">MTN</option>
+          <option value="Airtel">Airtel</option>
+          <option value="Glo">Glo</option>
+          <option value="9mobile">9mobile</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dataPlan">Select Data Plan</label>
+        <select id="dataPlan">
+          <option value="">--Select Data Plan--</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" id="price" readonly placeholder="Price will appear here">
+        <div class="price-box" id="totalAmount">You will pay: 0 Naira</div>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Recipient Phone Number</label>
+        <input type="number" id="phoneNumber" placeholder="Enter phone number">
+      </div>
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
+  <script>
+    // Data plans for each network
+    const dataPlans = {
+      MTN: [
+        { plan: "500MB", price: 500 },
+        { plan: "1GB", price: 1000 },
+        { plan: "2GB", price: 1500 }
+      ],
+      Airtel: [
+        { plan: "750MB", price: 700 },
+        { plan: "1.5GB", price: 1200 },
+        { plan: "3GB", price: 2000 }
+      ],
+      Glo: [
+        { plan: "1GB", price: 900 },
+        { plan: "2.5GB", price: 1800 },
+        { plan: "5GB", price: 3500 }
+      ],
+      "9mobile": [
+        { plan: "500MB", price: 600 },
+        { plan: "1GB", price: 1100 },
+        { plan: "2GB", price: 1900 }
+      ]
+    };
+
+    const networkSelect = document.getElementById('network');
+    const dataPlanSelect = document.getElementById('dataPlan');
+    const priceInput = document.getElementById('price');
+    const totalAmountDisplay = document.getElementById('totalAmount');
+
+    // Update data plans dynamically based on selected network
+    networkSelect.addEventListener('change', () => {
+      const selectedNetwork = networkSelect.value;
+      dataPlanSelect.innerHTML = '<option value="">--Select Data Plan--</option>';
+      priceInput.value = "";
+      totalAmountDisplay.textContent = "You will pay: 0 Naira";
+
+      if (selectedNetwork && dataPlans[selectedNetwork]) {
+        dataPlans[selectedNetwork].forEach(plan => {
+          const option = document.createElement('option');
+          option.value = plan.price;
+          option.textContent = `${plan.plan} - ${plan.price} Naira`;
+          dataPlanSelect.appendChild(option);
+        });
+      }
+    });
+
+    // Update price and total amount dynamically
+    dataPlanSelect.addEventListener('change', () => {
+      const selectedPrice = dataPlanSelect.value;
+      priceInput.value = `${selectedPrice} Naira`;
+      totalAmountDisplay.textContent = `You will pay: ${selectedPrice} Naira`;
+    });
+
+    // Form submission handler
+    const form = document.getElementById('dataPurchaseForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const network = networkSelect.value;
+      const dataPlan = dataPlanSelect.options[dataPlanSelect.selectedIndex].text;
+      const phoneNumber = document.getElementById('phoneNumber').value;
+
+      if (!network || !dataPlan || !phoneNumber) {
+        alert("Please complete all fields before proceeding.");
+        return;
+      }
+
+      alert(`Purchase successful for ${phoneNumber} on ${network} with ${dataPlan}`);
+    });
+  </script>
+</body>
+</html>

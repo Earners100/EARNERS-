@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EARNERS Notifications</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .notification {
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 4px solid #007bff;
+      background-color: #f7faff;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .notification:hover {
+      background-color: #eef7ff;
+    }
+
+    .notification h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #0056b3;
+    }
+
+    .notification p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .notification time {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+      color: #888;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      background: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Notifications</h2>
+
+    <!-- Example Notification -->
+    <div class="notification">
+      <h4>New Daily Task Added</h4>
+      <p>You can now post a TikTok video about EARNERS and earn 50 points! Don't forget to check the Daily Tasks page for details.</p>
+      <time>Posted on: November 16, 2024</time>
+    </div>
+
+    <div class="notification">
+      <h4>Withdrawal Processed</h4>
+      <p>Your recent withdrawal request of 5,000 Naira has been processed successfully. Check your bank account for confirmation.</p>
+      <time>Posted on: November 15, 2024</time>
+    </div>
+
+    <div class="notification">
+      <h4>Advert Approved</h4>
+      <p>Your advert has been approved and is now live on the platform. Visit the Advert section for more details.</p>
+      <time>Posted on: November 14, 2024</time>
+    </div>
+
+    <!-- Empty State -->
+    <!-- Uncomment this if there are no notifications -->
+    <!-- <div class="empty-state">
+      No notifications yet. Stay tuned!
+    </div> -->
+
+    <a href="dashboard.html" class="back-btn">Back to Dashboard</a>
+  </div>
+</body>
+</html>

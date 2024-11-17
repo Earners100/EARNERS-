@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win Gifts - EARNERS</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.win-gifts-container {
+    width: 90%;
+    max-width: 800px;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.gift-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gift-card {
+    background-color: #e8f1ff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gift-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gift-card h2 {
+    font-size: 20px;
+    color: #0ecd00;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.gift-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.gift-card button {
+    background-color: #0ecd00;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gift-card button:hover {
+    background-color: #ecc23b;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .win-gifts-container {
+        width: 80%;
+        max-width: 900px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .gift-card h2 {
+        font-size: 22px;
+    }
+
+    .gift-card p {
+        font-size: 18px;
+    }
+
+    .gift-card button {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gift-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .win-gifts-container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .gift-card h2 {
+        font-size: 24px;
+    }
+
+    .gift-card p {
+        font-size: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="win-gifts-container">
+        <h1>Select a Competition to Win Gifts</h1>
+        <div class="gift-options">
+            <div class="gift-card">
+                <h2>One Week Competition</h2>
+                <p>Refer 100 people in one week and get extra 10,000 Naira</p>
+                <button>Join Competition</button>
+            </div>
+            <div class="gift-card">
+                <h2>One Week Competition</h2>
+                <p>Refer 200 people in one week and get extra 20,000 Naira</p>
+                <button>Join Competition</button>
+            </div>
+            <div class="gift-card">
+                <h2>Two Weeks Competition</h2>
+                <p>Refer 100 people in 2 weeks and get extra 5,000 Naira</p>
+                <button>Join Competition</button>
+            </div>
+            <div class="gift-card">
+                <h2>Two Weeks Competition</h2>
+                <p>Refer 200 people in 2 weeks and get extra 10,000 Naira</p>
+                <button>Join Competition</button>
+            </div>
+            <div class="gift-card">
+                <h2>Two Weeks Competition</h2>
+                <p>Refer 500 people in 2 weeks and get an Android phone</p>
+                <button>Join Competition</button>
+            </div>
+            <!-- Additional gift options can be added here -->
+        </div>
+    </div>
+</body>
+</html>

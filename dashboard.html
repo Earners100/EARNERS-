@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EARNERS Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script>
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.style.left = sidebar.style.left === "-300px" ? "0" : "-300px";
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.style.transform = sidebar.style.transform === "translateX(0)" ? "translateX(-100%)" : "translateX(0)";
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar.style.transform === "translateX(0px)") {
+        sidebar.style.transform = "translateX(-100%)";
+    } else {
+        sidebar.style.transform = "translateX(0px)";
+    }
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Initialize the first slide
+    showSlide(currentSlide);
+
+    // Slide transition every 10 seconds
+    setInterval(nextSlide, 10000);
+});
+
+
+function copyReferralLink() {
+    const linkInput = document.getElementById("referralLink");
+    linkInput.select();
+    linkInput.setSelectionRange(0, 99999); // For mobile devices
+    document.execCommand("copy");
+    alert("Referral link copied to clipboard!");
+}
+    </script>
+</head>
+<body>
+
+    <!-- Sidebar Menu -->
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <h2>EARNERS</h2>
+            <button class="close-btn" onclick="toggleSidebar()">×</button>
+            <ul class="sidebar-menu">
+                <li><strong>DASHBOARD</strong></li>
+                <li><a href="fund account.html">Fund Wallet</a></li>
+                <li><a href="withdrawal.html">Withdrawal</a>                    </li>
+                <li><a href="upgrade.html">Upgrade</a></li>
+                <li><a href="advert.html">Adverts</a></li>
+                <li><a href="top referral.html">Top Referral</a></li>
+                <li><a href="task.html">daily task</a></li>
+                <li><a href="win gift.html">Win gifts</a></li>
+                <br>
+
+                <li><strong>EARNERS AFFILIATE MARKET</strong></li>
+                <li><a href="">E-books Library</a></li>
+                <li><a href="">Digital Courses</a></li>
+                <li><a href="">Products Store</a></li>
+                <li><a href="sellers page.html">sell your products</a></li>
+                
+                <br>
+
+                <li><strong>EARNERS SERVICES</strong></li>
+                <li><a href="advert.html">Advert</a></li>
+                <li><a href="SME data.html">SME Data</a></li>
+                <br>
+
+                <li><strong>EARNINGS</strong></li>
+                <li><a href="bonus earning.html">Bonus Earnings</a></li>
+                <li><a href="affiliate earning.html">Affiliate Earnings</a></li>
+                <li><a href="referral earning.html">Referral Earnings</a></li>
+                
+                <br>
+                <br>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+        <img src="logo3.png" alt="logo">
+        <div class="notification">
+            <span><a href="notification page.html">🔔</a></span>
+            <span><a href="setting.html">⚙️</a></span>
+        </div>
+    </header>
+    <div class="welcome">
+        
+    </div>
+
+ <div class="slideshow-container">
+    <!-- Regular Advert 1 -->
+    <div class="slide">
+        <img src="flyer 1.jpg" alt="Advert Image 1">
+        <p><a href="">learn more</a></p>
+    </div>
+
+    <!-- Regular Advert 2 -->
+    <div class="slide">
+        <img src="image2.jpg" alt="Advert Image 2">
+        <p><a href="">Learn more</a></p>
+    </div>
+
+    <!-- Regular Advert 3 -->
+    <div class="slide">
+        <img src="image3.jpg" alt="Advert Image 3">
+        <p><a href="">Learn more</a></p>
+    </div>
+    
+    <div class="slide">
+        <img src="path/to/image3.jpg" alt="Advert Image 4">
+        <p><a href="">Learn more</a></p>
+    </div>
+
+    <!-- Your Custom Advert (Can be updated easily) -->
+    <div class="slide">
+        <img src="path/to/your-advert.jpg" alt="Your Custom Advert">
+        <p>Your Custom Advert Text Here</p>
+    </div>
+
+    <!-- Add more slides as needed -->
+</div>
+
+    <!-- Main Dashboard Content -->
+    <div class="welcome">
+        <p class="w">Welcome back, <span>Prosper Martins</span></p>
+    </div>
+    <main class="dashboard-content">
+        <!-- Account Summary -->
+        <section class="account-summary">
+            <div class="total-balance">
+                <h3>Total Earning</h3>
+                <p>₦<span id="total-balance">15,000</span></p>
+            </div>
+            <div class="points">
+                <h3>Points</h3>
+                <p>Points for Tasks:</p> <p>•<span id="daily-points">100</span></p>
+            </div>
+            
+            <div class="balance">
+                <h3>Current Balance</h3>
+                <p>₦<span id="current-balance">5,000</span></p>
+            </div>
+            <div class="sales-info">
+                <h3>Sales</h3>
+                <p>Number of Sales: <span id="sales-count">25</span></p>
+            </div>
+            <button class="withdraw-btn"><a href="withdrawal.html">Withdraw</a></button>
+            <button class="fund-btn"><a href="fund account.html">Fund Account</a></button>
+        </section>
+
+       <!-- Money Management Panel -->
+<section class="money-management">
+    <h3>Money Management</h3>
+    <div class="card">
+        <h3>Buy SME Data</h3>
+        <p>Get affordable SME data packages.</p>
+        <button><a href="SME data.html"></a>Buy Now</a></button>
+    </div>
+    <div class="card">
+        <h3>Gift Data</h3>
+        <p>Send data to others easily.</p>
+        <button><a href="SME data.html">Gift Data</a></button>
+    </div>
+    <div class="card">
+        <h3>Deposit</h3>
+        <p>Fund your account to make purchases.</p>
+        <button><a href="fund account.html">Deposit Funds</a></button>
+    </div>
+    <div class="card">
+        <h3>place advert</h3>
+        <p>Advertise your products here at affordable rate.</p>
+        <button><a href="advert.html">Advert</a></button>
+    </div>
+</section>
+
+        <!-- Affiliate System Panel -->
+<section class="affiliate-system">
+    <h3>Affiliate System</h3>
+    <p>Referral Link:</p>
+    <div class="referral-box">
+        <input type="text" value="https://earners.com/referral/username" readonly id="referralLink">
+        <button onclick="copyReferralLink()">Copy Link</button>
+    </div>
+    <p>Share this link to invite others and earn commissions!</p>
+</section>
+
+        <!-- Free Space for Advertisements -->
+        <section class="advertisements">
+            <h3>Advertisements</h3>
+            <div class="advert-box">
+                <img src="flyer 1.jpg" alt="advert image">
+                <p>Advert: Exclusive Deals on E-books! </p>
+            </div>
+            <div class="advert-box">
+                <img src="" id="ads-1" alt="advert image">
+                <p>Advert: Join Our Digital Courses Today!</p>
+            </div>
+            <div class="advert-box">
+                <img src="" id="ads-2" alt="advert image">
+                <p>Advert: Join Our Digital Courses Today!</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
